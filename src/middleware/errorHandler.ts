@@ -1,5 +1,5 @@
-import { StatusCodeEnum } from "../types/response";
-import response from "../utils/response";
+import { StatusCodeEnum } from "../types/response.js";
+import response from "../utils/response.js";
 
 /**
  * Global error handler middleware

@@ -1,8 +1,8 @@
-import db from "../config/database";
-import response from "../utils/response";
-import { StatusCodeEnum } from "../types/response";
+import db from "../config/database.js";
+import response from "../utils/response.js";
+import { StatusCodeEnum } from "../types/response.js";
 import { Request, Response } from "express";
-import { createTimerLogsTableUtil } from "../migrations/timerLogMigration";
+import { createTimerLogsTableUtil } from "../migrations/timerLogMigration.js";
 
 export const createTimerLogsTable = async (_req: Request, res: Response) => {
   try {

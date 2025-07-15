@@ -2,9 +2,9 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import routes from "./routes/index";
-import response from "./utils/response";
-import { StatusCodeEnum } from "./types/response";
+import routes from "./routes/index.js";
+import response from "./utils/response.js";
+import { StatusCodeEnum } from "./types/response.js";
 
 const app = express();
 

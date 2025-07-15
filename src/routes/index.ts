@@ -1,9 +1,9 @@
 import { Router } from "express";
-import timerLogsRoutes from "./timerLogs";
-import databaseRoutes from "./database";
-import { StatusCodeEnum } from "../types/response";
-import response from "../utils/response";
-import errorHandler from "../middleware/errorHandler";
+import timerLogsRoutes from "./timerLogs.js";
+import databaseRoutes from "./database.js";
+import { StatusCodeEnum } from "../types/response.js";
+import response from "../utils/response.js";
+import errorHandler from "../middleware/errorHandler.js";
 import dotenv from "dotenv";
 
 dotenv.config();

@@ -1,4 +1,4 @@
-import { Response, StatusCode } from "../types/response";
+import { Response, StatusCode } from "../types/response.js";
 
 /**
  * Response utility

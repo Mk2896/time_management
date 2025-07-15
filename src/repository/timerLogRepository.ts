@@ -1,12 +1,12 @@
-import db from "../config/database";
-import { TimerLog } from "../entity/TimerLog";
+import db from "../config/database.js";
+import { TimerLog } from "../entity/TimerLog.js";
 import {
   StartTimerLogInput,
   EndTimerLogInput,
   GetTimerLogsInput,
   UpdateTimerLogMinutesInput,
   IdParam,
-} from "../schemas/timerLogSchema";
+} from "../schemas/timerLogSchema.js";
 
 class TimerLogRepository {
   async create({ timestamp }: StartTimerLogInput): Promise<TimerLog> {

@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import TimerLogRepository from "../repository/timerLogRepository";
-import response from "../utils/response";
-import { StatusCodeEnum } from "../types/response";
+import TimerLogRepository from "../repository/timerLogRepository.js";
+import response from "../utils/response.js";
+import { StatusCodeEnum } from "../types/response.js";
 import {
   StartTimerLogInput,
   EndTimerLogInput,
   GetTimerLogsInput,
   UpdateTimerLogMinutesInput,
   IdParam,
-} from "../schemas/timerLogSchema";
+} from "../schemas/timerLogSchema.js";
 
 export const startTimerLog = async (
   req: Request<{}, {}, StartTimerLogInput>,

@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   createTimerLogsTable,
   getDatabaseStatus,
-} from "../controllers/databaseController";
+} from "../controllers/databaseController.js";
 
 const router = Router();
 

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import response from "../utils/response";
-import { StatusCodeEnum } from "../types/response";
+import response from "../utils/response.js";
+import { StatusCodeEnum } from "../types/response.js";
 
 export default function authMiddleware(
   req: Request,

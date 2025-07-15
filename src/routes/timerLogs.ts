@@ -1,20 +1,20 @@
 import { Router } from "express";
-import authMiddleware from "../middleware/auth";
+import authMiddleware from "../middleware/auth.js";
 import {
   startTimerLog,
   endTimerLog,
   getTimerLogs,
   updateTimerLogMinutes,
   deleteTimerLog,
-} from "../controllers/timerLogsController";
-import { validateRequest, validateParams } from "../middleware/validation";
+} from "../controllers/timerLogsController.js";
+import { validateRequest, validateParams } from "../middleware/validation.js";
 import {
   startTimerLogSchema,
   endTimerLogSchema,
   getTimerLogsSchema,
   updateTimerLogMinutesSchema,
   idParamSchema,
-} from "../schemas/timerLogSchema";
+} from "../schemas/timerLogSchema.js";
 
 const router = Router();
 
