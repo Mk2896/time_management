@@ -74,11 +74,12 @@ export const endTimerLog = async (
 };
 
 export const getTimerLogs = async (
-  req: Request<{}, {}, GetTimerLogsInput>,
+  req: Request<GetTimerLogsInput, {}, {}>,
   res: Response
 ) => {
   try {
-    const { start, end } = req.body;
+    const start = String(req.query.start ?? "");
+    const end = String(req.query.end ?? "");
     const logs = await TimerLogRepository.findAllInRange({
       start,
       end,

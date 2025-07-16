@@ -28,7 +28,7 @@ router.put(
   validateRequest(endTimerLogSchema),
   endTimerLog
 );
-router.get("/", validateRequest(getTimerLogsSchema), getTimerLogs);
+router.get("/", validateParams(getTimerLogsSchema), getTimerLogs);
 router.put(
   "/:id",
   validateParams(idParamSchema),
