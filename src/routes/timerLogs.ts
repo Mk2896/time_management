@@ -7,7 +7,7 @@ import {
   updateTimerLogMinutes,
   deleteTimerLog,
 } from "../controllers/timerLogsController.js";
-import { validateRequest, validateParams } from "../middleware/validation.js";
+import { validate } from "../middleware/validation.js";
 import {
   startTimerLogSchema,
   endTimerLogSchema,
@@ -15,26 +15,27 @@ import {
   updateTimerLogMinutesSchema,
   idParamSchema,
 } from "../schemas/timerLogSchema.js";
+import { Request } from "../types/request.js";
 
 const router = Router();
 
 // Apply authentication middleware to all routes
 router.use(authMiddleware);
 
-router.post("/start", validateRequest(startTimerLogSchema), startTimerLog);
+router.post("/start", validate(startTimerLogSchema), startTimerLog);
 router.put(
   "/:id/end",
-  validateParams(idParamSchema),
-  validateRequest(endTimerLogSchema),
+  validate(idParamSchema, Request.PARAMS),
+  validate(endTimerLogSchema),
   endTimerLog
 );
-router.get("/", validateParams(getTimerLogsSchema), getTimerLogs);
+router.get("/", validate(getTimerLogsSchema, Request.QUERY), getTimerLogs);
 router.put(
   "/:id",
-  validateParams(idParamSchema),
-  validateRequest(updateTimerLogMinutesSchema),
+  validate(idParamSchema, Request.PARAMS),
+  validate(updateTimerLogMinutesSchema),
   updateTimerLogMinutes
 );
-router.delete("/:id", validateParams(idParamSchema), deleteTimerLog);
+router.delete("/:id", validate(idParamSchema, Request.PARAMS), deleteTimerLog);
 
 export default router;
