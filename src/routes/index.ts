@@ -4,11 +4,6 @@ import databaseRoutes from "./database.js";
 import { StatusCodeEnum } from "../types/response.js";
 import response from "../utils/response.js";
 import errorHandler from "../middleware/errorHandler.js";
-import dotenv from "dotenv";
-
-dotenv.config();
-
-const apiVersion = process.env.API_VERSION;
 
 const router = Router();
 
@@ -30,7 +25,7 @@ router.use(errorHandler);
 router.use("/database", databaseRoutes);
 
 // Timmer logs routes
-router.use(`${apiVersion}/timer-logs`, timerLogsRoutes);
+router.use(`/timer-logs`, timerLogsRoutes);
 
 // 404 handler
 router.use("*", (_, res) => {
